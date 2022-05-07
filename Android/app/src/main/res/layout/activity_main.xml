@@ -1,14 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+
+
+  style="@style/my_style_v21"
   android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:orientation="vertical" >
-  <TextView android:id="@+id/text"
+  android:layout_height="wrap_content"
+  android:orientation="vertical">
+
+  <EditText
+    android:id="@+id/input"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:fontFamily="monospace"
+    android:text=" "
+    android:textAlignment="center"
+    android:textColor="#673AB7"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    android:typeface="monospace" />
+
+  <TextView
+    android:id="@+id/output"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:text="@string/Output"
+
+    android:textAlignment="center"
+    android:textColor="#E91E63"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    android:typeface="monospace" />
+
+
+  <Button
+    android:id="@+id/convert"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:text="@string/Button_text"
+    android:textColor="#CDDC39" />
+
+  <TextView
+    android:id="@+id/Live_View"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/Live" />
+
+  <ImageView
+    android:id="@+id/sender_button"
+    android:layout_width="205dp"
+    android:layout_height="130dp"
+    android:background="#757231"
+    android:contentDescription="sender_button"
+    app:srcCompat="@android:drawable/ic_menu_always_landscape_portrait" />
+
+  <Switch
+    android:id="@+id/Switch_State"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Hello, I am a TextView" />
-  <Button android:id="@+id/button"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Hello, I am a Button" />
+    android:minHeight="48dp"
+    android:text="@string/Switch_State_Text" />
+
 </LinearLayout>

@@ -8,6 +8,20 @@ import android.widget.EditText;
 import android.view.View;
 
 public class DisplayMessageActivity  extends AppCompatActivity{
+  String message = "";
+  DisplayMessageActivity() {
+    super();
+  }
+   DisplayMessageActivity(String message) {
+     this.message = message;
+  }
+  public String getMessage() {
+    return message;
+  }
+  public void setMessage(String message) {
+    this.message = message;
+  }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
