@@ -50,15 +50,16 @@
 
   <ImageView
     android:id="@+id/sender_button"
-    android:layout_width="205dp"
+    android:layout_width="match_parent"
     android:layout_height="130dp"
-    android:background="#757231"
+    android:background="#753131"
     android:contentDescription="sender_button"
-    app:srcCompat="@android:drawable/ic_menu_always_landscape_portrait" />
+    app:srcCompat="@mipmap/tap"
+    tools:srcCompat="@android:drawable/radiobutton_on_background" />
 
   <Switch
     android:id="@+id/Switch_State"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="48dp"
     android:text="@string/Switch_State_Text" />
