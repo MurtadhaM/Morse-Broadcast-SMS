@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
       saved++;
     }
 
+
     if (added >= 1)
       calculateBAC(A);
 
