@@ -1,13 +1,14 @@
-/* Assignment #: 1
- * @author Murtadha Marzouq
- * @version May 30th, 2022
- */
+/****
+ * Assignment : 1
+  @author Murtadha Marzouq
+  @version May 30th, 2022
+ ****/
+
 import java.util.*;
 
 public class MainPart1 {
 
-  
-  /** 
+  /**
    * @param args
    */
   public static void main(String[] args) {

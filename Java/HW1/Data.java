@@ -5,6 +5,7 @@
  */
 
 public class Data {
+  // Sets the users.
   static String[] users = {
     "Lola,Grimsdyke,89,lgrimsdyke0@facebook.com,Female,Newport Beach,CA",
     "Sybilla,Martinetto,84,smartinetto1@google.it,Female,Anniston,AL",
@@ -2007,6 +2008,8 @@ public class Data {
     "Ancell,Trobe,92,atrobebl@fc2.com,Male,Winston Salem,NC",
     "Way,Brislawn,43,wbrislawnpe@yellowbook.com,Male,Denver,CO",
     "Tiertza,Zaniolini,43,tzaniolinia1@hibu.com,Female,Hampton,VA",
-    "Herrick,Lambeth,37,hlambethgd@census.gov,Male,Arlington,VA",
+    "Lola,Grimsdyke,89,lgrimsdyke0@facebook.com,Female,Newport Beach,CA",
   };
+
+  
 }

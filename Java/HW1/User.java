@@ -3,10 +3,12 @@
  * @version May 30th, 2022
  */
 
+// Creates a new user with the given information.
 public class User implements Comparable<User> {
   private String firstName, lastName, email, gender, city, state;
   private int age;
 
+  // Creates a new user.
   public User(
     String firstName,
     String lastName,
@@ -25,17 +27,19 @@ public class User implements Comparable<User> {
     this.age = age;
   }
 
+  // Constructs a user from a string.
   public User(String data) {
-    String[] resultingTokens = data.split(",");
-    this.firstName = resultingTokens[0];
-    this.lastName = resultingTokens[1];
-    this.age = Integer.parseInt(resultingTokens[2]);
-    this.email = resultingTokens[3];
-    this.gender = resultingTokens[4];
-    this.city = resultingTokens[5];
-    this.state = resultingTokens[6];
+    String[] output = data.split(",");
+    this.firstName = output[0];
+    this.lastName = output[1];
+    this.age = Integer.parseInt(output[2]);
+    this.email = output[3];
+    this.gender = output[4];
+    this.city = output[5];
+    this.state = output[6];
   }
 
+  // Returns a string representation of this user.
   /**
    * @return String
    */
@@ -73,7 +77,22 @@ public class User implements Comparable<User> {
    */
   @Override
   public int compareTo(User o) {
+    if (this.isEquals(o)) {
+      return this.state == o.state ? 0 : this.state.compareTo(o.state);
+    }
+
     return -1 * (this.getAge() - o.getAge());
+  }
+
+  public boolean isEquals(User o) {
+    boolean isEqual =
+      this.age == o.age &&
+      this.firstName.equals(o.firstName) &&
+      this.lastName.equals(o.lastName) &&
+      this.email.equals(o.email) &&
+      this.city.equals(o.city) &&
+      this.state.equals(o.state);
+    return isEqual;
   }
 
   /**
