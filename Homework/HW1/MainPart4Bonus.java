@@ -38,13 +38,24 @@ public class MainPart4Bonus {
     // Creating a comparator to sort the users by state.
     Comparator<User> byState = (User u1, User u2) ->
       u1.getState().compareTo(u2.getState());
-    // Another comparator to sort the users by age for giggles.
-    Comparator<User> byAge = (User u1, User u2) ->
+    /*
+      Another comparator to sort the users by age for giggles.
+
+
+      Comparator<User> byAge = (User u1, User u2) ->
       (u1.getAge() == (u2.getAge())) ? 0 : (u1.getAge() > u2.getAge()) ? 1 : -1;
-    // Another comparator to sort the users by age for giggles.
-    Comparator<User> byemail = (User u1, User u2) ->
+
+      Another comparator to sort the users by age for giggles.
+
+
+      Comparator<User> byemail = (User u1, User u2) ->
       (u1.getEmail().compareTo(u2.getEmail()));
 
+
+      */
+
+
+      
     // Sort the users by state.
     Collections.sort(commonUsers, byState);
     //        Collections.sort(commonUsers, byAge);
