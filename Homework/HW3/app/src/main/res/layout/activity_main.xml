@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+  android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.HW3.NoActionBar">
+
+      <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/Theme.HW3.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+  <TextView
+    android:id="@+id/password_count"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="30dp"
+    android:layout_marginTop="100dp"
+    android:text="@string/select_password_count"
+    android:textSize="21sp">
+
+
+  </TextView>
+
+  <SeekBar
+    android:id="@+id/password_count_seekbar"
+    android:layout_width="550dp"
+    android:layout_height="8dp"
+    android:layout_marginTop="160dp"
+    android:max="10"
+    android:layout_centerHorizontal="true"
+    android:progress="10"
+
+    />
+
+  <TextView
+    android:id="@+id/password_length"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="30dp"
+    android:layout_marginTop="250dp"
+    android:text="@string/select_password_length"
+    android:textSize="21sp">
+
+
+  </TextView>
+
+  <SeekBar
+    android:id="@+id/password_length_seekbar"
+    android:layout_width="550dp"
+    android:layout_height="8dp"
+    android:layout_marginTop="380dp"
+    android:max="23"
+    android:layout_centerHorizontal="true"
+    android:progress="8"
+
+    />
+
+  <Button
+    android:id="@+id/generate_password_thread_button"
+    android:layout_width="500dp"
+    android:layout_height="100dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="480dp"
+    android:text="@string/generate_password"
+
+
+     />
+  <Button
+    android:id="@+id/generate_password_Async_button"
+    android:layout_width="500dp"
+    android:layout_height="100dp"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="680dp"
+    android:text="@string/generate_password_async"
+
+
+    />
+</RelativeLayout>
