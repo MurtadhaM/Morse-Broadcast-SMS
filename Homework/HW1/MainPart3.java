@@ -1,3 +1,4 @@
+
 /* Assignment #: 1
  * @author Murtadha Marzouq
  * @version May 30th, 2022
@@ -11,6 +12,7 @@ public class MainPart3 {
   public static void main(String[] args) {
     // Sets the number of digits in the given array.
     int[] numbers = { 1, 2, 3, 2, 5, 2, 4, 6, 7 };
+
     printLongestSequence(numbers);
   }
 
@@ -55,4 +57,5 @@ public class MainPart3 {
     }
     return input;
   }
+
 }
