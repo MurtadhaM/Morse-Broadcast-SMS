@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="500dp"
+  android:layout_height="500dp"
+  android:layout_margin="10dp"
+  android:padding="10dp"
+  tools:context=".DialogFragment">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <TextView
+    android:id="@+id/popupText"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="24dp"
+    android:text="Generating Passwords ..."
+    android:textColor="@color/black"
+
+    android:textSize="30sp"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <ProgressBar
+      android:id="@+id/progressBar_single_password"
+      style="?android:attr/progressBarStyleHorizontal"
+      android:layout_width="match_parent"
+      android:layout_height="10dp"
+      android:layout_marginTop="200dp"
+      android:progress="100"
+
+      />
+
+    <ProgressBar
+      android:id="@+id/progressBar_all_passwords"
+      style="?android:attr/progressBarStyleHorizontal"
+      android:layout_width="match_parent"
+      android:layout_height="30dp"
+      android:layout_marginTop="32dp"
+      android:layout_marginBottom="-100dp"
+
+      android:progress="75"/>
+
+    <TextView
+      android:id="@+id/percentage_completed"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="0%"
+      android:layout_marginTop="100dp"
+      android:textColor="@color/black"
+      android:textSize="20dp"
+      android:textStyle="bold" />
+
+    <TextView
+      android:id="@+id/out_of_total"
+      android:layout_width="wrap_content"
+      android:layout_marginLeft="400dp"
+      android:layout_height="wrap_content"
+      android:text="0/100"
+      android:textColor="@color/black"
+      android:textSize="20dp" />
+
+
+
+
+  </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</FrameLayout>
+

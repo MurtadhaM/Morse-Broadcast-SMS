@@ -77,7 +77,7 @@
     android:text="@string/generate_password"
 
 
-     />
+    />
   <Button
     android:id="@+id/generate_password_Async_button"
     android:layout_width="500dp"
@@ -88,4 +88,10 @@
 
 
     />
+
+
+
+
+
+
 </RelativeLayout>
