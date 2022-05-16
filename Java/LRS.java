@@ -1,4 +1,3 @@
-package Application;
 public class LRS {
 
   public static void main(String[] args) {

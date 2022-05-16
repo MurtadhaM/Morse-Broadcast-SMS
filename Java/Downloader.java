@@ -1,4 +1,3 @@
-package Application;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.net.URL;
