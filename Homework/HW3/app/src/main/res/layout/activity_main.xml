@@ -38,9 +38,9 @@
     android:id="@+id/password_count_seekbar"
     android:layout_width="550dp"
     android:layout_height="8dp"
+    android:layout_centerHorizontal="true"
     android:layout_marginTop="160dp"
     android:max="10"
-    android:layout_centerHorizontal="true"
     android:progress="10"
 
     />
