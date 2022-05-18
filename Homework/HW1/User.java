@@ -8,6 +8,46 @@ public class User implements Comparable<User> {
   private String firstName, lastName, email, gender, city, state;
   private int age;
 
+  /**
+   * @return int
+   */
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + age;
+    result = prime * result + ((city == null) ? 0 : city.hashCode());
+    result = prime * result + ((email == null) ? 0 : email.hashCode());
+    result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
+    result = prime * result + ((gender == null) ? 0 : gender.hashCode());
+    result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
+    result = prime * result + ((state == null) ? 0 : state.hashCode());
+
+    return result;
+  }
+
+  /**
+   * @param o
+   * @return boolean
+   */
+  public boolean contains(Object o) {
+    User other = (User) o;
+    return (
+      this.firstName.equals(other.firstName) &&
+      this.lastName.equals(other.lastName) &&
+      this.email.equals(other.email)
+    );
+  }
+
+  /**
+   * @param obj
+   * @return boolean
+   */
+  @Override
+  public boolean equals(Object obj) {
+    return this.contains(obj);
+  }
+
   // Creates a new user.
   public User(
     String firstName,
@@ -84,6 +124,10 @@ public class User implements Comparable<User> {
     return -1 * (this.getAge() - o.getAge());
   }
 
+  /**
+   * @param o
+   * @return boolean
+   */
   public boolean isEquals(User o) {
     boolean isEqual =
       this.age == o.age &&

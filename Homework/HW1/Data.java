@@ -572,7 +572,6 @@ public class Data {
     "Emmie,Westmoreland,64,ewestmorelandfm@networksolutions.com,Female,Dallas,TX",
     "Jonathon,Stife,50,jstifefn@vkontakte.ru,Male,Abilene,TX",
     "Iolanthe,January,94,ijanuaryfo@mail.ru,Female,Richmond,VA",
-    "Solomon,Gilstin,52,sgilstinfp@networksolutions.com,Male,Miami,FL",
     "Alis,Tipton,69,atiptonfq@salon.com,Female,Manassas,VA",
     "Frederick,Ricket,91,fricketfr@google.com.br,Male,Bakersfield,CA",
     "Hart,Whiteley,97,hwhiteleyfs@state.gov,Male,San Bernardino,CA",
@@ -843,7 +842,9 @@ public class Data {
     "Lexine,Yellowley,92,lyellowleyn5@yale.edu,Female,Athens,GA",
     "Sissie,Cracker,60,scrackern6@example.com,Female,Detroit,MI",
     "Mellicent,Smitton,62,msmittonn7@mediafire.com,Female,Minneapolis,MN",
-    "Megan,Crathern,53,mcrathernn8@upenn.edu,Female,Birmingham,AL",
+      "Megan,Crathern,53,mcrathernn8@upenn.edu,Female,Birmingham,AL",
+      "Iolanthe,January,94,ijanuaryfo@mail.ru,Female,Richmond,VA",
+
     "Burt,Frohock,61,bfrohockn9@smh.com.au,Male,Washington,DC",
     "Marlowe,Stuckey,23,mstuckeyna@whitehouse.gov,Male,Oakland,CA",
     "La verne,Jorcke,92,ljorckenb@time.com,Female,El Paso,TX",
@@ -2008,7 +2009,8 @@ public class Data {
     "Ancell,Trobe,92,atrobebl@fc2.com,Male,Winston Salem,NC",
     "Way,Brislawn,43,wbrislawnpe@yellowbook.com,Male,Denver,CO",
     "Tiertza,Zaniolini,43,tzaniolinia1@hibu.com,Female,Hampton,VA",
-    "Lola,Grimsdyke,89,lgrimsdyke0@facebook.com,Female,Newport Beach,CA",
+      "Lola,Grimsdyke,89,lgrimsdyke0@facebook.com,Female,Newport Beach,CA",
+
   };
 
   
