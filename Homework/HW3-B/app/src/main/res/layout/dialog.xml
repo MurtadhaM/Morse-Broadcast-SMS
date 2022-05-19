@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+
+
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:theme="@style/MaterialAlertDialog.Material3"
+  tools:context=".MainActivity">
+
+  <TextView
+    android:id="@+id/generatopn_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/generating_passwords"
+    android:textColor="#E91E63"
+    android:textSize="16sp"
+    android:textStyle="bold"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.348" />
+
+  <TextView
+    android:id="@+id/password_single_progress"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="4dp"
+    android:layout_marginBottom="292dp"
+    android:text="@string/Number_completed_text"
+    android:textColor="#673AB7"
+    android:textSize="17sp"
+    android:textStyle="bold"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/generatopn_text"
+    app:layout_constraintTop_toBottomOf="@+id/single_progress"
+    app:layout_constraintVertical_bias="1.0" />
+
+  <TextView
+    android:id="@+id/password_Percentage_progress"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="48dp"
+    android:text="@string/passwordPercentage_progress"
+    android:textColor="#673AB7"
+    android:textSize="17sp"
+    android:textStyle="bold"
+    app:layout_constraintBaseline_toBaselineOf="@+id/password_single_progress"
+    app:layout_constraintStart_toStartOf="parent" />
+
+  <ProgressBar
+    android:id="@+id/Total_progress"
+    style="?android:attr/progressBarStyleHorizontal"
+    android:layout_width="375dp"
+    android:layout_height="20dp"
+    android:layout_marginTop="44dp"
+    android:progress="100"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/generatopn_text" />
+
+  <ProgressBar
+    android:id="@+id/single_progress"
+    style="?android:attr/progressBarStyleHorizontal"
+    android:layout_width="375dp"
+    android:layout_height="20dp"
+    android:layout_marginTop="52dp"
+    android:progress="100"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.555"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/Total_progress"
+
+    />
+</androidx.constraintlayout.widget.ConstraintLayout>

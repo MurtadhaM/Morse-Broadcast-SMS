@@ -1,16 +1,12 @@
 <resources>
-  <string name="app_name">HW3</string>
-  <string name="title_activity_main">MainActivity</string>
-  <!-- Strings used for fragments for navigation -->
-  <string name="first_fragment_label">First Fragment</string>
-  <string name="second_fragment_label">Second Fragment</string>
-  <string name="next">Next</string>
-  <string name="previous">Previous</string>
+  <string name="app_name">Gemini 4</string>
 
-  <string name="select_password_count">Select Password Count:</string>
-  <string name="select_password_length">"Select Passwords Length: "</string>
-  <string name="generate_password">Generate Password (Thread)</string>
-  <string name="generate_password_async">Generate Passwords (Async)</string>
-  <!-- TODO: Remove or change this placeholder text -->
-  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="select_pass_count">Select Passwords count: </string>
+  <string name="select_pass_length">Select Passwords length: </string>
+  <string name="pass">Password: </string>
+  <string name="gen_pass_thread">Generate Passwords (Thread)</string>
+  <string name="gen_pass_async">Generate Passwords (Async Task)</string>
+
+  <string name="loading_generating_pass">Generating Passwords...</string>
+
 </resources>

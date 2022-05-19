@@ -1,0 +1,16 @@
+<resources>
+  <string name="app_name">HW3</string>
+    <string name="select_password_count">Select Password Count: </string>
+  <string name="select_password_length">Select Password Length: </string>
+  <string name="generate_password_thread">Generate Password (THREAD)</string>
+  <string name="generate_password_async">Generate Password (ASYNC)</string>
+  <string name="_1">1</string>
+  <string name="Value_PassLength">8</string>
+  <string name="Value_Pass_Count">1</string>
+  <string name="selected_password">Selected Password:</string>
+  <string name="Selected_password_Value">p@ssW0rd</string>
+  <string name="generating_passwords">Generating Passwords .....</string>
+  <string name="Number_completed_text">1/100</string>
+  <string name="passwordPercentage_progress">1%</string>
+</resources>
+
