@@ -1,27 +1,54 @@
+/*
+  Author: Murtadha Marzouq
+  Date: Summer 2022
+  Description: UserFragment.java
+  Assignment: Midterm
+
+ */
 package com.gemini.midterm;
 
+import android.util.Log;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class User {
+  public static ArrayList<Character> users_Names_First= new ArrayList<>();
+  public  HashMap<Character, String> usersFirstName = new HashMap<>();
+  ArrayList<Character> characters = new ArrayList<>();
+
+  public  ArrayList<Character> users_Names_First() {
 
 
+      getUsers();
+  if(users_Names_First.size()==0) {
+    // get unique first letters
+    for (User user : users) {
+      if (!characters.contains(user.getName().charAt(0))) {
+        characters.add(user.getName().charAt(0));
+        System.out.println(String.valueOf(user.getName().charAt(0)));
+      }
+    }
+  }
+
+
+    return characters;
+  }
 
     public static ArrayList<User> users = new ArrayList<User>();
-    public static ArrayList<User> getUsers() {
-      users.add(new User("Gemini", "California","22","Work","M"));
-      users.add(new User("Gemini", "Texas","32","Family","F"));
-      users.add(new User("Gemini", "North Carolina","52","Friend","M"));
-      users.add(new User("Gemini", "California","57","Family","F"));
-      users.add(new User("Gemini", "California","18","Work","F"));
+    public  ArrayList<User> getUsers() {
 
+      if(users.size() <= 0){
+        users.add(new User("David", "California","22","Work","M"));
+        users.add(new User("Gemini", "Texas","32","Family","F"));
+        users.add(new User("Baba", "North Carolina","52","Friend","M"));
+        users.add(new User("Gemini", "California","57","Family","F"));
+        users.add(new User("Ali", "California","18","Work","F"));
+
+      }
       return users;
     }
     User(){
-        users.add(new User("Gemini", "California","22","Work","M"));
-      users.add(new User("Gemini", "Texas","32","Family","F"));
-      users.add(new User("Gemini", "North Carolina","52","Friend","M"));
-      users.add(new User("Gemini", "California","57","Family","F"));
-      users.add(new User("Gemini", "California","18","Work","F"));
 
     }
 

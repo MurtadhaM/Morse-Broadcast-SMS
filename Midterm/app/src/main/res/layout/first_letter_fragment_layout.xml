@@ -21,7 +21,9 @@
     app:layout_constraintStart_toEndOf="@+id/Filter_Clear_First_Letter_Button"
     app:layout_constraintTop_toTopOf="parent"
     tools:context=".FirstLetterFragment"
-    tools:listitem="@layout/first_letter_fragment_item"></androidx.recyclerview.widget.RecyclerView>
+    tools:listitem="@layout/first_letter_fragment_item" >
+  </androidx.recyclerview.widget.RecyclerView>
+
 
   <Button
     android:id="@+id/Filter_Clear_First_Letter_Button"

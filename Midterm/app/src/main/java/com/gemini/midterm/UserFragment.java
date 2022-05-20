@@ -1,3 +1,11 @@
+/*
+  Author: Murtadha Marzouq
+  Date: Summer 2022
+  Description: UserFragment.java
+  Assignment: Midterm
+
+ */
+
 package com.gemini.midterm;
 
 import android.content.Context;
@@ -12,7 +20,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.gemini.midterm.placeholder.PlaceholderContent;
 
 /**
  * A fragment representing a list of Items.
@@ -60,11 +67,12 @@ public class UserFragment extends Fragment {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
             if (mColumnCount <= 1) {
+
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyUserRecyclerViewAdapter( User.getUsers()));
+            recyclerView.setAdapter(new MyUserRecyclerViewAdapter(new  User().getUsers()));
         }
         return view;
     }

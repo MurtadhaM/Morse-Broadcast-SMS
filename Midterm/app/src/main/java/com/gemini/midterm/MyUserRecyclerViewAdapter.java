@@ -3,10 +3,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.gemini.midterm.placeholder.PlaceholderContent.PlaceholderItem;
 import com.gemini.midterm.databinding.FragmentUserBinding;
 
 import java.util.List;
@@ -15,6 +15,7 @@ import java.util.List;
 public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecyclerViewAdapter.ViewHolder> {
 
     private final List<User> users;
+
 
     public MyUserRecyclerViewAdapter(List<User> items) {
         users = items;
@@ -54,6 +55,7 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
         public final TextView mStatusView;
         public final ImageView mImageView;
         public final TextView mStateView;
+        public final Button mButton_list;
 
         public ViewHolder(FragmentUserBinding binding) {
             super(binding.getRoot());
@@ -62,6 +64,7 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
             mStatusView = binding.textViewStatus;
             mImageView = binding.imageViewUserIcon;
           mStateView = binding.TextViewState;
+          mButton_list = binding.getRoot().findViewById(R.id.button_list);
         }
 
 
