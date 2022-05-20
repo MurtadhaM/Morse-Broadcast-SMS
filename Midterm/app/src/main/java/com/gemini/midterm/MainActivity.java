@@ -1,3 +1,10 @@
+/*
+  Author: Murtadha Marzouq
+  Date: Summer 2022
+  Description: UserFragment.java
+  Assignment: Midterm
+
+ */
 package com.gemini.midterm;
 
 import android.os.Bundle;

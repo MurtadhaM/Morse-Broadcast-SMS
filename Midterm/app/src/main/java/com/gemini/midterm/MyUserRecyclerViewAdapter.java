@@ -1,3 +1,10 @@
+/*
+  Author: Murtadha Marzouq
+  Date: Summer 2022
+  Description: UserFragment.java
+  Assignment: Midterm
+
+ */
 package com.gemini.midterm;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -64,7 +71,7 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
             mStatusView = binding.textViewStatus;
             mImageView = binding.imageViewUserIcon;
           mStateView = binding.TextViewState;
-          mButton_list = binding.getRoot().findViewById(R.id.button_list);
+          mButton_list = binding.getRoot().findViewById(R.id.my_Bullet_List);
         }
 
 

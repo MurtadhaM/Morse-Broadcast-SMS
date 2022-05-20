@@ -11,22 +11,19 @@
 
   tools:context=".FirstLetterFragment">
 
-  <androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/button_list"
-    android:name="com.gemini.midterm.FirstLetterFragment"
-    android:layout_width="wrap_content"
-    android:layout_height="58dp"
-    android:layout_marginStart="16dp"
-    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-    app:layout_constraintStart_toEndOf="@+id/Filter_Clear_First_Letter_Button"
-    app:layout_constraintTop_toTopOf="parent"
-    tools:context=".FirstLetterFragment"
-    tools:listitem="@layout/first_letter_fragment_item" >
-  </androidx.recyclerview.widget.RecyclerView>
 
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/First_Letter_Recycler_View"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="52dp"
+    android:layout_marginBottom="8dp"
+    app:layout_constraintBottom_toTopOf="@+id/filter_Clear_Age_Range_0_18_Button"
+    app:layout_constraintStart_toEndOf="@+id/Filter_Clear_First_Letter_Clear_Button"
+    tools:listitem="@layout/first_letter_fragment_item" />
 
   <Button
-    android:id="@+id/Filter_Clear_First_Letter_Button"
+    android:id="@+id/Filter_Clear_First_Letter_Clear_Button"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Clear"
@@ -40,7 +37,7 @@
     android:layout_marginTop="67dp"
     android:text="Clear"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="@+id/Filter_Clear_First_Letter_Button" />
+    app:layout_constraintTop_toTopOf="@+id/Filter_Clear_First_Letter_Clear_Button" />
 
   <Button
     android:id="@+id/filter_Clear_Age_Range_0_18_Button"
@@ -103,4 +100,5 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toEndOf="@+id/filter_Clear_Age_Range_35_55_Button"
     app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -44,6 +44,8 @@ public class User {
         users.add(new User("Baba", "North Carolina","52","Friend","M"));
         users.add(new User("Gemini", "California","57","Family","F"));
         users.add(new User("Ali", "California","18","Work","F"));
+        users.add(new User("Zmini", "California","57","Family","F"));
+        users.add(new User("Hemini", "California","57","Family","F"));
 
       }
       return users;

@@ -1,3 +1,10 @@
+/*
+  Author: Murtadha Marzouq
+  Date: Summer 2022
+  Description: UserFragment.java
+  Assignment: Midterm
+
+ */
 package com.gemini.midterm;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.gemini.midterm.databinding.FragmentUserBinding;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,6 +31,7 @@ public class MyFirstLetterRecyclerViewAdapter extends RecyclerView.Adapter<MyFir
   }
 
 
+
   public MyFirstLetterRecyclerViewAdapter(ArrayList<Character> characters) {
     this.characters = characters;
   }
@@ -35,14 +42,31 @@ public class MyFirstLetterRecyclerViewAdapter extends RecyclerView.Adapter<MyFir
   public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
 
-    ViewHolder vh = new ViewHolder(FragmentUserBinding.inflate(LayoutInflater.from( parent.getContext()), parent, false));
-    return vh;
+    ViewHolder vh = new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.first_letter_fragment_item, parent, false));
 
+     return vh; 
   }
 
   @Override
   public void onBindViewHolder(final ViewHolder holder, int position) {
 
+    if(holder.button_pressed.findViewById(R.id.First_Letter_Filter_button) == null) {
+      // Log and dont do anything
+      Log.d("MyFirstLetterRecyclerViewAdapter", "onBindViewHolder: " + "button_list is null");
+
+    }
+    else {
+      // Log and Update the UI
+      Log.d("MyFirstLetterRecyclerViewAdapter", "onBindViewHolder: " + "button_list is not null" + holder.itemView.findViewById(R.id.First_Letter_Filter_button));
+      holder.button_pressed.setText(characters.get(position).toString());
+      holder.button_pressed.findViewById(R.id.First_Letter_Filter_button).setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+          Toast.makeText(v.getContext(), "Filtering By Letter " + characters.get(position).toString(), Toast.LENGTH_SHORT).show();
+        }
+      });
+
+    }
 
   }
   @Override
@@ -52,14 +76,20 @@ public class MyFirstLetterRecyclerViewAdapter extends RecyclerView.Adapter<MyFir
     return characters.size();
   }
 
-  public class ViewHolder extends RecyclerView.ViewHolder {
+  public static class ViewHolder extends RecyclerView.ViewHolder {
 
-    Button button_list;
-
-    public ViewHolder(FragmentUserBinding binding) {
-      super(binding.getRoot());
+    Button button_pressed;
+    TextView textView;
 
 
+
+
+    public ViewHolder(View inflate) {
+      super(inflate);
+
+      button_pressed = inflate.findViewById(R.id.First_Letter_Filter_button);
+
+    }
 
 
     }
@@ -69,4 +99,5 @@ public class MyFirstLetterRecyclerViewAdapter extends RecyclerView.Adapter<MyFir
 
 
 
-}
+
+
