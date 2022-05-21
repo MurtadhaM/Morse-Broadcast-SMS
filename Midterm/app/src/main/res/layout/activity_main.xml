@@ -20,7 +20,7 @@
 
   <androidx.fragment.app.FragmentContainerView
     android:id="@+id/FirstLetterFragmentContainer"
-    android:name="com.gemini.midterm.FirstLetterFragment"
+    android:name="com.gemini.midterm.FilterFragment"
     android:layout_width="match_parent"
 
 

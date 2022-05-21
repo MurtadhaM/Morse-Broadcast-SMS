@@ -16,13 +16,17 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+
 
 public class UserFragment extends Fragment {
 
+  public static ArrayList<User> users = new User().getUsers();
     private static final String ARG_COLUMN_COUNT = "column-count";
 
     public UserFragment() {
@@ -50,9 +54,24 @@ public class UserFragment extends Fragment {
             RecyclerView recyclerView = (RecyclerView) view;
 
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
-                recyclerView.setAdapter(new MyUserRecyclerViewAdapter(new  User().getUsers()));
+                recyclerView.setAdapter(new MyUserRecyclerViewAdapter(SortFragment.users));
         }
         return view;
     }
+
+
+  public void clearFirstLetterFilters(){
+
+    ArrayList<User> clearFilter = new User().getUsers();
+    clearFilter.removeAll(users);
+    // Updating the UserList
+    Log.d("Filtered Users", "onClick: " + clearFilter.size());
+    Log.d("FilterFragment", "filterByAge: " + users.size());
+    new FilterFragment().ageClearFilters(clearFilter);
+
+
+
+
+  }
 
 }

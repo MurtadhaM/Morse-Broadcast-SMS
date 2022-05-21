@@ -24,20 +24,58 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
 
     private final ArrayList<User> users;
 
+    private ArrayList<User> filteredUsers = new ArrayList<>();
+
 
     public MyUserRecyclerViewAdapter(ArrayList<User> items) {
         users = items;
+        filteredUsers = items;
     }
 
+
     @Override
+
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         return new ViewHolder(FragmentUserBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
 
     }
 
+    public void setFilteredUsers(ArrayList<User> filteredUsers) {
+        this.filteredUsers = filteredUsers;
+    }
+    public void updateList(ArrayList<User> users) {
+        this.users.clear();
+        this.users.addAll(users);
+        this.filteredUsers.clear();
+        this.filteredUsers.addAll(users);
+        notifyDataSetChanged();
+    }
+
+    public ArrayList<User> getFilteredUsers() {
+        return filteredUsers;
+    }
+
+    public void removeItem(int position) {
+        filteredUsers.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    public void addItem(User user) {
+        filteredUsers.add(user);
+        notifyItemInserted(users.size() - 1);
+    }
+
+
+
+
 
     public void clearFilter() {
+
+        filteredUsers.clear();
+        filteredUsers.addAll(users);
+        notifyDataSetChanged();
+
 
 
 
@@ -48,7 +86,8 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
   public void setFilter(ArrayList<User> newList) {
     users.clear();
     users.addAll(newList);
-    notifyDataSetChanged();
+
+    notifyItemRangeChanged(0, users.size());
   }
 
 
@@ -89,14 +128,16 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
             mAgeView = binding.TextViewAge;
             mStatusView = binding.textViewStatus;
             mImageView = binding.imageViewUserIcon;
-          mStateView = binding.TextViewState;
-          mButton_list = binding.getRoot().findViewById(R.id.my_Bullet_List);
+            mStateView = binding.TextViewState;
+            mButton_list = binding.getRoot().findViewById(R.id.my_Bullet_List);
         }
 
 
 
 
     }
+
+    // create an interface to sort the users by name
 
 
 }

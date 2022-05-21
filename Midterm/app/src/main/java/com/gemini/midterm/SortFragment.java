@@ -18,13 +18,63 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.gemini.midterm.databinding.SortFragmentViewBinding;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.stream.Collectors;
+
 public class SortFragment extends Fragment {
 
+  public static ArrayList<User> users = new User().getUsers();
+    boolean isAscending = true;
     private SortFragmentViewBinding binding;
 
+  public ArrayList<User> sortByAge(ArrayList<User> users){
+    if(isAscending){
+      users.sort((u1, u2) ->  Integer.parseInt(u1.getAge()) - Integer.parseInt(u2.getAge()));
+      this.isAscending = false;
+    }else{
+      users.sort((u1, u2) ->     Integer.parseInt(u2.getAge()) - Integer.parseInt(u1.getAge()));
+      this.isAscending = true;
+    }
+    return users;
+  }
+
+  public ArrayList<User> sortByName(ArrayList<User> users){
+    if(isAscending){
+      users.sort((u1, u2) ->  u1.getName().compareTo(u2.getName()));
+      this.isAscending = false;
+    }else{
+      users.sort((u1, u2) ->     u2.getName().compareTo(u1.getName()));
+      this.isAscending = true;
+    }
+    return users;
+  }
+
+
+  public ArrayList<User> sortByState(ArrayList<User> users){
+    if(isAscending){
+      users.sort(Comparator.comparing(User::getState));
+
+      this.isAscending = false;
+    }else{
+      users.sort((u1, u2) ->     u2.getState().compareTo(u1.getState()));
+      this.isAscending = true;
+    }
+    return users;
+  }
+  public String getSortType(){
+    if(isAscending){
+      return "ASC";
+    }else{
+      return "DEC";
+    }
+
+  }
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -51,26 +101,35 @@ public class SortFragment extends Fragment {
           public void onClick(View v) {
 
             Log.d("Sorting", "onClick: ");
-            Toast.makeText(getContext(), "Sorting by Age", Toast.LENGTH_SHORT).show();
+            ((RecyclerView)getView().getRootView().findViewById(R.id.list)).setAdapter(new MyUserRecyclerViewAdapter(sortByAge( users)));
+            sortByAgeButton.setText("State A-Z" + " " + getSortType());
           }
       });
+
 
 
       sortByStateButton.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
 
+
               Log.d("Sorting", "Sorting by State: ");
-              Toast.makeText(getContext(), "Sorting by State", Toast.LENGTH_SHORT).show();
+            ((RecyclerView)getView().getRootView().findViewById(R.id.list)).setAdapter(new MyUserRecyclerViewAdapter(sortByState( users)));
+            sortByStateButton.setText("State A-Z" + " " + getSortType());
+
+
           }
       });
+
 
       sortByNameButton.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
 
               Log.d("Sorting", "Sorting by Name: ");
-              Toast.makeText(getContext(), "Sorting by Name", Toast.LENGTH_SHORT).show();
+            ((RecyclerView)getView().getRootView().findViewById(R.id.list)).setAdapter(new MyUserRecyclerViewAdapter(sortByName( users)));
+            sortByNameButton.setText("Name A-Z " + " " + getSortType());
+
           }
       });
 

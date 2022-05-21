@@ -9,7 +9,7 @@
 
   android:layout_height="wrap_content"
 
-  tools:context=".FirstLetterFragment">
+  tools:context=".FilterFragment">
 
 
   <androidx.recyclerview.widget.RecyclerView

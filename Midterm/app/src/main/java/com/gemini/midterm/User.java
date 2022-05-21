@@ -14,13 +14,11 @@ import java.util.HashMap;
 
 public class User {
   public static ArrayList<Character> users_Names_First= new ArrayList<>();
-  public  HashMap<Character, String> usersFirstName = new HashMap<>();
   ArrayList<Character> characters = new ArrayList<>();
 
   public  ArrayList<Character> users_Names_First() {
-
-
-      getUsers();
+    // populate the arraylist users
+    ArrayList<User> users =    getUsers();
   if(users_Names_First.size()==0) {
     // get unique first letters
     for (User user : users) {
