@@ -50,8 +50,9 @@ public class UserFragment extends Fragment {
             RecyclerView recyclerView = (RecyclerView) view;
 
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            recyclerView.setAdapter(new MyUserRecyclerViewAdapter(new  User().getUsers()));
+                recyclerView.setAdapter(new MyUserRecyclerViewAdapter(new  User().getUsers()));
         }
         return view;
     }
+
 }

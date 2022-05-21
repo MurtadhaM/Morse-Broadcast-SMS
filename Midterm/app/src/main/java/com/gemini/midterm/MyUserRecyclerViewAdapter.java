@@ -16,15 +16,16 @@ import android.widget.TextView;
 
 import com.gemini.midterm.databinding.FragmentUserBinding;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecyclerViewAdapter.ViewHolder> {
 
-    private final List<User> users;
+    private final ArrayList<User> users;
 
 
-    public MyUserRecyclerViewAdapter(List<User> items) {
+    public MyUserRecyclerViewAdapter(ArrayList<User> items) {
         users = items;
     }
 
@@ -34,6 +35,23 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
         return new ViewHolder(FragmentUserBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
 
     }
+
+
+    public void clearFilter() {
+
+
+
+
+
+    }
+
+  public void setFilter(ArrayList<User> newList) {
+    users.clear();
+    users.addAll(newList);
+    notifyDataSetChanged();
+  }
+
+
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
@@ -49,6 +67,7 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
             holder.mImageView.setImageResource(R.drawable.img1);
         }
     }
+
 
     @Override
     public int getItemCount() {
@@ -75,8 +94,9 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
         }
 
 
-    }
 
+
+    }
 
 
 }
