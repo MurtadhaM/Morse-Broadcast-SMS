@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">Gemini Morse Toolkit</string>
-    <string name="app_description">A toolkit for decoding and encoding Morse code.</string>
-    <string name="app_version">Version 1.0</string>
-  <string name="Button_text"> Convert </string>
-  <string name="Output">  </string>
-  <string name="Live">  </string>
-  <string name="Switch_State_Text">Text To Morse</string>
-</resources>

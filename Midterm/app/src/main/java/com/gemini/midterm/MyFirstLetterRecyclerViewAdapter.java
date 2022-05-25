@@ -6,6 +6,10 @@
 
  */
 package com.gemini.midterm;
+import static com.gemini.midterm.R.id.First_Letter_Filter_button;
+import static com.gemini.midterm.R.id.recyclerView;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,39 +26,39 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class MyFirstLetterRecyclerViewAdapter extends RecyclerView.Adapter<MyFirstLetterRecyclerViewAdapter.ViewHolder> {
 
-  private   ArrayList<Character> characters;
-
+  private ArrayList<User> users = new User().getUsers();
+  private   ArrayList<Character> characters = new User().users_Names_First();
   public MyFirstLetterRecyclerViewAdapter() {
+
   }
 
 
 
-  public MyFirstLetterRecyclerViewAdapter(ArrayList<Character> characters) {
-    this.characters = characters;
-  }
 
 
 
+
+
+  @NonNull
   @Override
   public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
 
-    ViewHolder vh = new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.first_letter_fragment_item, parent, false));
-
-     return vh; 
+    return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.first_letter_fragment_item, parent, false));
   }
 
   @Override
   public void onBindViewHolder(final ViewHolder holder, int position) {
-    if (holder.button_pressed.findViewById(R.id.First_Letter_Filter_button) == null) {
+    if (holder.button_pressed.findViewById(First_Letter_Filter_button) == null) {
       // Log and dont do anything
       Log.d("MyFirstLetterRecyclerViewAdapter", "onBindViewHolder: " + "button_list is null");
 
-    } else if (position >= 0 && holder.button_pressed.findViewById(R.id.First_Letter_Filter_button) != null) {
+    } else if (position >= 0 && holder.button_pressed.findViewById(First_Letter_Filter_button) != null) {
 
       holder.button_pressed.setText(characters.get(position).toString());
       holder.button_pressed.setOnClickListener(new View.OnClickListener() {
@@ -62,11 +66,13 @@ public class MyFirstLetterRecyclerViewAdapter extends RecyclerView.Adapter<MyFir
 
         // set the button text to the first letter of the user's name
         public void onClick(View v) {
-          Toast.makeText(v.getContext(), "Filtering By Letter " + characters.get(position).toString(), Toast.LENGTH_SHORT).show();
-          String letter = characters.get(position).toString();
+          Log.d("LOH", "onClick: " + holder.button_pressed.getText());
+          String letter = holder.button_pressed.getText().toString();
 
-          Log.d("Filter Letter", "onClick: " + letter);
-          Filter(letter, holder);
+           UserFragment.Filter(letter, holder.rootView);
+
+
+
 
 
 
@@ -76,7 +82,7 @@ public class MyFirstLetterRecyclerViewAdapter extends RecyclerView.Adapter<MyFir
         }
       });
     }
-    else if(holder.button_pressed.findViewById(R.id.First_Letter_Filter_button) != null){
+    else if(holder.button_pressed.findViewById(First_Letter_Filter_button) != null){
       Log.d("MyFirstLetterRecyclerViewAdapter", "onBindViewHolder: " + "button_list is null");
     }
 
@@ -84,64 +90,27 @@ public class MyFirstLetterRecyclerViewAdapter extends RecyclerView.Adapter<MyFir
       Log.d("MyFirstLetterRecyclerViewAdapter", "onBindViewHolder: " + "position is less than 0");
 
 
-      holder.clear_button.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-          Toast.makeText(v.getContext(), "Clearing Filter", Toast.LENGTH_SHORT).show();
-          Filter(" ", holder);
-        }
-      });
     }
   }
-  ArrayList<User> filteredUsers;
-
-  public void Filter(String letter, ViewHolder holder) {
-    if(letter.length() >= 1) {
-       filteredUsers = new ArrayList<>();
-      for (User user : new User().getUsers()) {
-        if (user.getName().charAt(0) == letter.charAt(0)) {
-          filteredUsers.add(user);
-        }
-      }
-
-    }
-
-    else {
-      ArrayList<User> filteredUsers = new User().getUsers();
-    }
-
-    // Updating the UserList
-    Log.d("Filtered Users", "onClick: " + filteredUsers.size());
-    MyUserRecyclerViewAdapter adapter = new MyUserRecyclerViewAdapter(filteredUsers);
-    View myUserView = holder.itemView.getRootView().findViewById(R.id.list);
-    RecyclerView recyclerView = myUserView.findViewById(R.id.list);
-    recyclerView.setAdapter(adapter);
-    recyclerView.setLayoutManager(new LinearLayoutManager(myUserView.getContext()));
-  }
 
 
-  public void clearFilter(ViewHolder holder) {
-    ArrayList<User> filteredUsers = new User().getUsers();
-    MyUserRecyclerViewAdapter adapter = new MyUserRecyclerViewAdapter(filteredUsers);
-    View myUserView = holder.itemView.getRootView().findViewById(R.id.list);
-    RecyclerView recyclerView = myUserView.findViewById(R.id.list);
-    recyclerView.setAdapter(adapter);
-    recyclerView.setLayoutManager(new LinearLayoutManager(myUserView.getContext()));
-  }
+
+
 
   @Override
   public int getItemCount() {
-
-
     return characters.size();
   }
+  ViewHolder holder;
+
 
 
   public static class ViewHolder extends RecyclerView.ViewHolder {
 
+
     Button button_pressed;
     Button clear_button;
-      View rootView;
+    View rootView;
 
 
 
@@ -149,9 +118,12 @@ public class MyFirstLetterRecyclerViewAdapter extends RecyclerView.Adapter<MyFir
     public ViewHolder(View inflate) {
       super(inflate);
 
-      button_pressed = inflate.findViewById(R.id.First_Letter_Filter_button);
-        rootView= inflate.getRootView();
-      clear_button = inflate.findViewById(R.id.First_Letter_Filter_button);
+      if (inflate.findViewById(First_Letter_Filter_button) != null) {
+        rootView = inflate;
+        button_pressed = inflate.findViewById(First_Letter_Filter_button);
+        rootView = inflate.getRootView();
+        clear_button = inflate.findViewById(First_Letter_Filter_button);
+      }
 
 
 

@@ -7,6 +7,8 @@
  */
 package com.gemini.midterm;
 
+import static com.gemini.midterm.R.id.First_Letter_Filter_button;
+
 import android.content.Context;
 import android.os.Bundle;
 
@@ -21,6 +23,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.gemini.midterm.databinding.FragmentUserBinding;
+
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
@@ -29,11 +33,17 @@ import java.util.stream.Collectors;
  * A fragment representing a list of Items.
  */
 public class FilterFragment extends Fragment implements Button.OnClickListener {
+  public static ArrayList<Character> firstCharacters;
   // Event Handlers
   ArrayList<User> users = new User().getUsers();
+  //ArrayList<Character> firstCharacters = (ArrayList<Character>)  users.stream().map(User::getName).map(String::toUpperCase).map(s -> s.charAt(0)).collect(Collectors.toList());
 
   MyUserRecyclerViewAdapter adapter = new MyUserRecyclerViewAdapter(users);
-  MyFirstLetterRecyclerViewAdapter myFirstLetterRecyclerViewAdapter = new MyFirstLetterRecyclerViewAdapter((ArrayList<Character>)  users.stream().map(User::getName).map(String::toUpperCase).map(s -> s.charAt(0)).collect(Collectors.toList()));
+  MyFirstLetterRecyclerViewAdapter myFirstLetterRecyclerViewAdapter = new MyFirstLetterRecyclerViewAdapter();
+  UserFragment UserFragment = new UserFragment();
+public interface firstCharacters{
+  public void setFirstCharacters(ArrayList<Character> firstCharacters);
+}
 
 
   @Override
@@ -52,38 +62,34 @@ public class FilterFragment extends Fragment implements Button.OnClickListener {
             case R.id.filter_Clear_Age_Range_0_18_Button:
               Log.d("Button Clicked", "filter_Clear_Age_Range_0_18_Button: ");
               ageFilterSelected = "0-18";
-              filterByAge(ageFilterSelected);
-
+              UserFragment.filterByAge(ageFilterSelected,getView());
               Toast.makeText(getContext(), "Age Range: " + ageFilterSelected, Toast.LENGTH_SHORT).show();
               break;
             case R.id.filter_Clear_Age_Range_18_25_Button:
               Log.d("Button Clicked", "filter_Clear_Age_Range_18_25_Button: ");
               ageFilterSelected = "18-25";
-              filterByAge(ageFilterSelected);
-
+              UserFragment.filterByAge(ageFilterSelected,getView());
               Toast.makeText(getContext(), "Age Range: " + ageFilterSelected, Toast.LENGTH_SHORT).show();
               break;
             case R.id.filter_Clear_Age_Range_25_35_Button:
               Log.d("Button Clicked", "filter_Clear_Age_Range_25_35_Button: ");
               ageFilterSelected = "25-35";
-              filterByAge(ageFilterSelected);
-
+              UserFragment.filterByAge(ageFilterSelected,getView());
               Toast.makeText(getContext(), "Age Range: " + ageFilterSelected, Toast.LENGTH_SHORT).show();
               break;
             case R.id.filter_Clear_Age_Range_35_55_Button:
               Log.d("Button Clicked", "filter_Clear_Age_Range_35_55_Button: ");
               ageFilterSelected = "35-55";
-              filterByAge(ageFilterSelected);
-
+              UserFragment.filterByAge(ageFilterSelected,getView());
               Toast.makeText(getContext(), "Age Range: " + ageFilterSelected, Toast.LENGTH_SHORT).show();
               break;
             case R.id.filter_Clear_Age_Range_55_older_Button:
               Log.d("Button Clicked", "filter_Clear_Age_Range_55_older_Button: ");
 
               ageFilterSelected = "55-100";
-              filterByAge(ageFilterSelected);
-
+              UserFragment.filterByAge(ageFilterSelected,getView());
               break;
+
 
             default:
               Log.d("Button Clicked", "Invalid Button: ");
@@ -97,7 +103,29 @@ public class FilterFragment extends Fragment implements Button.OnClickListener {
   }
 
 
-
+//  public  ArrayList<User> filterByAge(String ageGroup) {
+//
+//    int firstAge = Integer.parseInt(ageGroup.split("-")[0]);
+//    int secondAge = Integer.parseInt(ageGroup.split("-")[1]);
+//
+//
+//    Log.d("ages", "filterByAge: " + firstAge + " " + secondAge);
+//    ArrayList<User> clearFilter = new ArrayList<User>();
+//
+//
+//    for (User user : users) {
+//      if ((Integer.parseInt(user.getAge()) >= firstAge && Integer.parseInt(user.getAge()) <= secondAge)) {
+//
+//        clearFilter.add(user);
+//      }
+//    }
+//
+//
+//
+//    return clearFilter;
+//
+//
+//  }
 
 
 
@@ -121,18 +149,12 @@ public class FilterFragment extends Fragment implements Button.OnClickListener {
 
 
 
-  public void ageClearFilters(ArrayList<User> ageFilteredUsers){
+  public void ageClearFilters(ArrayList<User> ageFilteredUsers) {
 
-    if(ageFilteredUsers.size() > 0){
-      adapter = new MyUserRecyclerViewAdapter(users);
-      myFirstLetterRecyclerViewAdapter = new MyFirstLetterRecyclerViewAdapter((ArrayList<Character>) users.stream().map(User::getName).map(String::toUpperCase).map(s -> s.charAt(0)).collect(Collectors.toList()));
+    if (ageFilteredUsers.size() > 0) {
+      myFirstLetterRecyclerViewAdapter = new MyFirstLetterRecyclerViewAdapter();
 
     }
-
-
-
-
-
   }
 
 
@@ -204,33 +226,7 @@ public ArrayList<User> filterByFirstLetter(){
 
 
 }
-    public ArrayList<User> filterByAge(String ageGroup) {
 
-      int firstAge =Integer.parseInt(ageGroup.split("-")[0]);
-      int secondAge = Integer.parseInt(ageGroup.split("-")[1]);
-
-
-
-      Log.d("ages", "filterByAge: " + firstAge + " " + secondAge);
-      ArrayList<User> clearFilter = new ArrayList<User>();
-
-
-      for(User user : users) {
-        if ((Integer.parseInt(user.getAge()) >= firstAge && Integer.parseInt(user.getAge()) <= secondAge)) {
-
-          clearFilter.add(user);
-        }
-      }
-
-
-      SortFragment.users = users;
-
-      ((RecyclerView)getView().getRootView().findViewById(R.id.list)).setAdapter(new MyUserRecyclerViewAdapter(clearFilter));
-
-return  clearFilter;
-
-
-    }
 
 
 

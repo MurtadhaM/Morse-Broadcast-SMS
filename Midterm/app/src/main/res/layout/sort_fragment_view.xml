@@ -26,10 +26,9 @@
     android:id="@+id/sortByAgeButton"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginStart="116dp"
     android:text="Age A-Z"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintHorizontal_bias="0.173"
     app:layout_constraintStart_toEndOf="@+id/sortByNameButton"
     app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,10 +36,9 @@
     android:id="@+id/sortByStateButton"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginStart="40dp"
     android:text="State A-Z"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.822"
+    app:layout_constraintHorizontal_bias="0.833"
     app:layout_constraintStart_toEndOf="@+id/sortByAgeButton"
     app:layout_constraintTop_toTopOf="parent" />
 

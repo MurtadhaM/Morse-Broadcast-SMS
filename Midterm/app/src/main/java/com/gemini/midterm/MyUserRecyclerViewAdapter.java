@@ -6,6 +6,7 @@
 
  */
 package com.gemini.midterm;
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +24,7 @@ import java.util.List;
 public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecyclerViewAdapter.ViewHolder> {
 
     private final ArrayList<User> users;
-
+    FragmentUserBinding userBinding;
     private ArrayList<User> filteredUsers = new ArrayList<>();
 
 
@@ -33,8 +34,8 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
     }
 
 
+    @NonNull
     @Override
-
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         return new ViewHolder(FragmentUserBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
@@ -45,11 +46,7 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
         this.filteredUsers = filteredUsers;
     }
     public void updateList(ArrayList<User> users) {
-        this.users.clear();
-        this.users.addAll(users);
-        this.filteredUsers.clear();
-        this.filteredUsers.addAll(users);
-        notifyDataSetChanged();
+
     }
 
     public ArrayList<User> getFilteredUsers() {
@@ -57,8 +54,7 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
     }
 
     public void removeItem(int position) {
-        filteredUsers.remove(position);
-        notifyItemRemoved(position);
+
     }
 
     public void addItem(User user) {
