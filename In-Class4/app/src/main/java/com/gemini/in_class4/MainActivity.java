@@ -10,13 +10,13 @@ import androidx.lifecycle.ViewModelProvider;
 public class MainActivity extends AppCompatActivity {
   Button buttonRegistration;
   UserViewModel mViewModel;
+
   MainFragment mainFragment;
   UserViewModel.User user = UserViewModel.user;
 
 /*
 Authors: Murtadha Marzouq && Will Colvill
 Assignment: In Class 4
-
  */
 
 
