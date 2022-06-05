@@ -1,0 +1,28 @@
+<resources>
+  <string name="app_name">User Creator In Class 3</string>
+
+  <string name="main_title_value">Main</string>
+  <string name="welcome_Value">Welcome!</string>
+  <string name="register_button_text">Register</string>
+  <string name="id">ID:</string>
+  <string name="email">Email:</string>
+  <string name="name">Name:</string>
+  <string name="dept">Dept:</string>
+  <string name="select">Select</string>
+  <string name="submit_registration">Submit</string>
+  <string name="computer_science">Computer Science</string>
+  <string name="software_info_systems">Software Info. Systems</string>
+  <string name="bio_informatics">Bio Informatics</string>
+  <string name="data_science">Data Science</string>
+  <string name="cancel">Cancel</string>
+  <string name="select_department_activity">Select</string>
+  <string name="department"> </string>
+  <string name="my_name">My Name</string>
+  <string name="name_label">Name:</string>
+  <string name="email_label">Email:</string>
+  <string name="email_value_text">me@me.com</string>
+  <string name="id_label">ID:</string>
+  <string name="id_value">12312312</string>
+  <string name="department_label">Department:</string>
+  <string name="my_department">My Department</string>
+</resources>

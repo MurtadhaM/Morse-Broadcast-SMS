@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Tip Calculator</string>
+    <string name="title_activity_main">Tip Calculator</string>
+
+    <string name="bill_total">Bill Total:</string>
+    <string name="_10">10%</string>
+    <string name="_15">15%</string>
+    <string name="_20">20%</string>
+    <string name="custom">Custom</string>
+    <string name="tip">Tip %</string>
+    <string name="tip1">Tip:</string>
+    <string name="total">Total</string>
+    <string name="_0">$0</string>
+    <string name="_0_00">$0.00</string>
+    <string name="custom_tip">Custom:</string>
+    <string name="enter_bill_total">Enter Bill Total</string>
+    <string name="enter_bill_total1">Enter Bill Total</string>
+    <string name="clear">Clear</string>
+  <string name="one">One</string>
+  <string name="two">Two</string>
+  <string name="three">Three</string>
+  <string name="four">Four</string>
+  <string name="split_by">Split by:</string>
+    <string name="Split_output">$0.00</string>
+  <string name="total_person">Total/Person</string>
+    <string name="percentage_custom">0%</string>
+    <string name="title">Tip Calculator</string>
+  <string name="zero">0.00</string>
+    <string name="error_message_bill_input_less_than_1">Input Total is less than $1</string>
+  <string name="error_button_bill_input_less_than_1">input Range Error</string>
+  <string name="error_title_bill_input_less_than_1">Input Total Error</string>
+</resources>

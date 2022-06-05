@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+  <com.google.android.material.appbar.AppBarLayout
+    android:id="@+id/appBarLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/Theme.Homeowork2.AppBarOverlay"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.appcompat.widget.Toolbar
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="?attr/actionBarSize"
+      android:background="?attr/colorPrimary"
+      app:popupTheme="@style/Theme.Homeowork2.PopupOverlay" />
+
+  </com.google.android.material.appbar.AppBarLayout>
+
+  <TextView
+    android:id="@+id/textView_Tasks_Total_label"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="32dp"
+    android:text="@string/you_have_7_tasks"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.498"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+
+  <Button
+    android:id="@+id/button_view_all_tasks"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/view_tasks"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/cardView_important_task" />
+
+  <Button
+    android:id="@+id/button_add_task"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/create_a_task"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/button_view_all_tasks" />
+
+  <ListView
+    android:id="@+id/ListViewView_all_tasks"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:visibility="gone"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView_Tasks_Total_label"
+    tools:listitem="@layout/list_item_task"
+    tools:context=".MainActivity" />
+
+  <androidx.cardview.widget.CardView
+    android:id="@+id/cardView_important_task"
+    android:layout_width="match_parent"
+
+    app:cardUseCompatPadding="true"
+    android:layout_height="100dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView_Tasks_Total_label">
+
+    <TextView
+      android:id="@+id/textView_tasks_important_label"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textStyle="bold"
+      android:layout_gravity="top|left"
+      android:text="Upcoming Task:" />
+
+    <TextView
+      android:id="@+id/textView_task_name_value"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center|left"
+      android:text="Task Name" />
+
+    <TextView
+      android:id="@+id/textView_task_date_value"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom|left"
+      android:text="@string/date_task_card_date" />
+
+    <TextView
+      android:id="@+id/textView_task_priority_value"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom|center"
+      android:text="@string/priotiry" />
+  </androidx.cardview.widget.CardView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

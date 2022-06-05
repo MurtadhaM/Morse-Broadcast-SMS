@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".Registration">
+
+
+  <TextView
+    android:id="@+id/textView_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="44dp"
+    android:layout_marginTop="68dp"
+    android:text="@string/name"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+    android:id="@+id/textView_email"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="28dp"
+    android:text="@string/email"
+    app:layout_constraintStart_toStartOf="@+id/textView_name"
+    app:layout_constraintTop_toBottomOf="@+id/textView_name" />
+
+  <TextView
+    android:id="@+id/textView_id"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="24dp"
+    android:text="@string/id"
+    app:layout_constraintStart_toStartOf="@+id/textView_email"
+    app:layout_constraintTop_toBottomOf="@+id/textView_email" />
+
+  <EditText
+    android:id="@+id/editTextTextEmailAddress"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:inputType="textEmailAddress"
+    android:minHeight="48dp"
+    android:tooltipText="Enter your email address"
+    app:layout_constraintBaseline_toBaselineOf="@+id/textView_email"
+    app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+    app:layout_constraintHorizontal_bias="0.392"
+    app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
+    tools:ignore="SpeakableTextPresentCheck" />
+
+  <EditText
+    android:id="@+id/editTextTextPersonName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="68dp"
+    android:ems="10"
+    android:inputType="textPersonName"
+
+    android:tooltipText="Enter your name"
+    app:layout_constraintBaseline_toBaselineOf="@+id/textView_name"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toEndOf="@+id/textView_name" />
+
+  <EditText
+    android:id="@+id/editTextNumberSigned_id"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:inputType="numberSigned"
+    app:layout_constraintBaseline_toBaselineOf="@+id/textView_id"
+    app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress"
+    app:layout_constraintHorizontal_bias="0.666"
+    app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress" />
+
+  <TextView
+    android:id="@+id/textView_department"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="24dp"
+    android:text="@string/dept"
+    app:layout_constraintStart_toStartOf="@+id/textView_id"
+    app:layout_constraintTop_toBottomOf="@+id/textView_id" />
+
+  <Button
+    android:id="@+id/button_select_department"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/select"
+    app:layout_constraintBaseline_toBaselineOf="@+id/textView_selected_department_text"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+  <Button
+    android:id="@+id/button_submit_registration"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/submit_registration"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/button_select_department" />
+
+  <TextView
+    android:id="@+id/textView_selected_department_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/department"
+    app:layout_constraintBottom_toBottomOf="@+id/textView_department"
+    app:layout_constraintEnd_toStartOf="@+id/button_select_department"
+    app:layout_constraintStart_toEndOf="@+id/textView_department"
+    app:layout_constraintTop_toTopOf="@+id/textView_department" />
+</androidx.constraintlayout.widget.ConstraintLayout>
