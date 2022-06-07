@@ -1,33 +1,21 @@
 <resources>
   <string name="app_name">Homeowork3</string>
-  <string name="title_activity_main">MainActivity</string>
-  <!-- Strings used for fragments for navigation -->
+    <!-- Strings used for fragments for navigation -->
 
   <string name="you_have_7_tasks">You have 7 tasks</string>
   <string name="view_tasks">View Tasks</string>
   <string name="create_a_task">Create A Task</string>
   <string name="task_name_label">Name:</string>
-  <string name="task_name_input">Enter task name</string>
-  <string name="enter_task_name_here">Enter task name here</string>
-  <string name="enter_task_name_here_hint">Enter task name here</string>
-  <string name="date_label">Date:</string>
+    <string name="date_label">Date:</string>
   <string name="date_value">12/12/2020</string>
-  <string name="set_date_button_text">Set Date</string>
-  <string name="priority_label">Priority:</string>
-  <string name="high_priority">High</string>
-  <string name="medium_priority">Medium</string>
-  <string name="low_priority">Low</string>
-  <string name="submit_button">Submit</string>
-  <string name="cancel_button">Cancel</string>
-  <string name="task_name">Task Name</string>
+    <string name="priority_label">Priority:</string>
+    <string name="task_name">Task Name</string>
   <string name="priority">Low</string>
   <string name="selected_task_button_cancel">Cancel</string>
   <string name="delete">Delete</string>
-  <string name="task_1">Task 1</string>
-  <string name="priotiry">high</string>
+    <string name="priotiry">high</string>
   <string name="date_task_card_date">12/12/2022</string>
   <string name="task_name_lebel">Task Name</string>
   <string name="upcoming_task">Upcoming Task:</string>
   <!-- TODO: Remove or change this placeholder text -->
-  <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

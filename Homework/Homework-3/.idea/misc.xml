@@ -5,6 +5,8 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2171875" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.40260416666666665" />
+        <entry key="app/src/main/res/layout/createtaskfragmentlayout.xml" value="0.2171875" />
+        <entry key="app/src/main/res/layout/display_task_fragment_layout.xml" value="0.2171875" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.2171875" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.2171875" />
         <entry key="app/src/main/res/layout/fragment_to_do_list.xml" value="0.203125" />

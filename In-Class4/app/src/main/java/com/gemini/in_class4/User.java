@@ -12,45 +12,13 @@ import androidx.lifecycle.ViewModel;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class UserViewModel extends ViewModel {
-
-  public static User user = new User();
-
-  ArrayList<User> users = new ArrayList<>();
-
-
-  //remove user from users arraylist
-  public void removeUser(User user) {
-    users.remove(user);
-  }
-
-  // get count of users
-  public int getCount() {
-    return users.size();
-  }
-
-  // get user at index
-  public User getUser(int index) {
-    return users.get(index);
-  }
-
-  public void addUser(User user) {
-    this.users.add(user);
-  }
-
-  public void addUser(String name, String email, int id, String department) {
-    User user = new User(name, email, id, department);
-    this.users.add(user);
-  }
-
-
-  public static class User implements Serializable {
+  public  class User implements Serializable {
     private String name;
     private String email;
-    private int id;
+    private String id;
     private String department;
 
-    public User(String name, String email, int id, String department) {
+    public User(String name, String email, String id, String department) {
       this.name = name;
       this.email = email;
       this.id = id;
@@ -76,11 +44,11 @@ public class UserViewModel extends ViewModel {
       this.email = email;
     }
 
-    public int getId() {
+    public String getId() {
       return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
       this.id = id;
     }
 
@@ -103,4 +71,4 @@ public class UserViewModel extends ViewModel {
     }
   }
 
-}
+

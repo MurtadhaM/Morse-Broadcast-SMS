@@ -6,30 +6,37 @@ Date: 10/06/2022
  */
 package com.gemini.homework_3;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 // This is the Task class. It is used to store the data, name, priority for each task.
 public class Task implements Comparable {
+  public static ArrayList<Task> tasks = new ArrayList<>();
+
+
+  // This is the constructor for the Task class.
+  public static Task selectedTask;
   // Fields
   String name;
   int priority;
   Calendar date;
-String dateString;
-
+  String dateString;
   // Constructor
   public Task(String name, int priority, Calendar date) {
     this.name = name;
     this.priority = priority;
     this.date = date;
   }
+
+
+  // setters and getters
+
+
   public Task(String name, int priority, String date) {
     this.name = name;
     this.priority = priority;
     this.dateString = date;
   }
-
-  // setters and getters
-
 
   public String getName() {
     return name;
@@ -37,6 +44,14 @@ String dateString;
 
   public void setName(String name) {
     this.name = name;
+  }
+
+    public Task getSelectedTask() {
+    return selectedTask;
+  }
+
+  public static void setSelectedTask(int index) {
+    selectedTask = tasks.get(index);
   }
 
   public String getPriority() {
@@ -49,12 +64,18 @@ String dateString;
       return "Low";
     }
   }
+
+
   public void setPriority(int priority) {
     this.priority = priority;
   }
   public Calendar getDate() {
     return date;
   }
+  public void setDate(String date) {
+    this.dateString = date;
+  }
+
   public void setDate(Calendar date) {
     this.date = date;
   }

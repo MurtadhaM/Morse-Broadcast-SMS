@@ -8,23 +8,30 @@ package com.gemini.homeowork2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class CreateTaskActivitity extends AppCompatActivity {
+  // UI ELEMENTS FOR DAYS
 TextView textView_task_name;
 RadioGroup radioGroup_task_priority;
 Button cancel_button;
 Button submit_button;
 TextView textView_date_value;
 Button dateSelect_button;
-  Calendar date ;
+  Date selectedDate;
+  Calendar calendar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,25 +40,29 @@ Button dateSelect_button;
         setTitle("Create Task");
         // set the ui elements
         textView_task_name = findViewById(R.id.textView_task_name);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
         radioGroup_task_priority = findViewById(R.id.radioGroup_priority);
         cancel_button = findViewById(R.id.button_create_task_cancel_button);
         submit_button = findViewById(R.id.button_create_task_Submit_button);
         textView_date_value = findViewById(R.id.textView_date_value);
         dateSelect_button = findViewById(R.id.button_select_date);
         // set on click listeners
-
+      textView_date_value.setText(" ");
       dateSelect_button.setOnClickListener(view -> {
 
         //  open date picker
         DatePickerDialog datePickerDialog = new DatePickerDialog(CreateTaskActivitity.this, (datePicker, year, month, day) -> {
-            // set the date
-            date = Calendar.getInstance();
-            date.set(year,month,day);
+          // set the date in the text view
+          selectedDate =new Date(Date.parse(day + "/" + (month + 1) + "/" + year));
 
-            // set the date in the text view
-            textView_date_value.setText(day + "/" + month + "/" + year);
-        }, 2022, 6, 10);
+            textView_date_value.setText(simpleDateFormat.format(selectedDate));
 
+
+
+          Log.d("DATE", "onCreate: " + selectedDate);
+
+        },Calendar.getInstance().get(Calendar.YEAR),Calendar.getInstance().get(Calendar.MONTH),Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
         datePickerDialog.show();
       });
 
@@ -79,6 +90,10 @@ Button dateSelect_button;
             // show a toast
             Toast.makeText(CreateTaskActivitity.this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
 
+            Log.d("Task Name", "onCreate: " + task_name);
+            Log.d("Task Priority", "onCreate: " + task_priority);
+
+
 
           } else {
 
@@ -86,11 +101,16 @@ Button dateSelect_button;
 
           // add the task to the list of tasks
 
-          MainActivity.tasks.add(new Task(task_name, task_priority, textView_date_value.getText().toString()));
-          // finish the activity with result code SUCCESS
-          setResult(RESULT_OK);
-          finish();
-        }
+            // Put the task in the intent
+
+Task t = new Task(task_name, task_priority, simpleDateFormat.format(selectedDate));
+            Intent intent = new Intent();
+            intent.putExtra("task", t);
+            // return the result
+            setResult(RESULT_OK, intent);
+            finish();
+          }
+
         });
 
 
