@@ -109,8 +109,16 @@ public class MainActivity extends AppCompatActivity  implements ToDoListFragment
     // SORT TASKS BY DATE
     Comparator<Task> comp = new Comparator<Task>() {
       @Override
+      /*
+
+
+       */
       public int compare(Task o1, Task o2) {
-        return o1.getDate().compareTo(o2.getDate());
+
+
+
+
+        return o1.getDate().getDate() - o2.getDate().getDate();
       }
     };
 
@@ -118,7 +126,7 @@ public class MainActivity extends AppCompatActivity  implements ToDoListFragment
     if (tasks.size() > 0) {
       // if there are tasks, sort them by date
       if(tasks.size() > 1) {
-        tasks.sort(comp);
+       Collections.sort(tasks, comp);
       }
 
       return tasks.get(tasks.size() - 1);

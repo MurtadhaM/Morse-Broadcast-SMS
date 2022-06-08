@@ -3,6 +3,7 @@ package com.gemini.in_class4;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,7 +29,6 @@ Assignment: In Class 4
 
     getSupportFragmentManager().beginTransaction()
       .replace(R.id.fragmentContainerView, new MainFragment())
-      .addToBackStack("MainFragment")
       .commit();
 
 
@@ -39,6 +39,7 @@ Assignment: In Class 4
   public void gotoRegistration() {
     getSupportFragmentManager().beginTransaction()
       .replace(R.id.fragmentContainerView, new RegistrationFragment(), "RegistrationFragment")
+      .addToBackStack(null)
       .commit();
   }
 

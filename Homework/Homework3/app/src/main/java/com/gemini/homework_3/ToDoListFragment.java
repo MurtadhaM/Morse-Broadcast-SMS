@@ -70,7 +70,6 @@ TextView textView_task_date_value;
 
     // First Recieve the data from the MainActivity
     ArrayList<Task> tasks = mListerner.getTaskList();
-
     ArrayAdapter<Task> adapter = new ArrayAdapter<Task>(getContext(), android.R.layout.select_dialog_item, tasks);
 // ----------------------------------------------------------------------------------------------------------------------
     // View TASK BUTTON

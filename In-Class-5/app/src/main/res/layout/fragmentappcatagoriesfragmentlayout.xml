@@ -1,0 +1,11 @@
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/List_View"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:padding="10dip"
+  tools:listitem="@layout/list_layout"
+  android:textStyle="bold">
+
+
+</ListView>

@@ -92,8 +92,8 @@ public class Task implements Comparable {
 
   @Override
   public int compareTo(Object o) {
-    return this.getDate().compareTo(((Task) o).getDate());
+    Task task = (Task) o;
+    return this.getDate().getDate()  - task.getDate().getDate();
   }
-
 
 }

@@ -18,6 +18,7 @@ import java.util.ArrayList;
     private String id;
     private String department;
 
+
     public User(String name, String email, String id, String department) {
       this.name = name;
       this.email = email;
