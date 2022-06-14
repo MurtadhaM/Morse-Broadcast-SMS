@@ -22,8 +22,11 @@ public class FilterFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FilterFragmentLayoutBinding.inflate(inflater, container, false);
-        return binding.getRoot();
+
+
+      View view = inflater.inflate(R.layout.filter_fragment_layout, container, false);
+      binding = FilterFragmentLayoutBinding.inflate(inflater, container, false);
+      return view;
 
     }
 

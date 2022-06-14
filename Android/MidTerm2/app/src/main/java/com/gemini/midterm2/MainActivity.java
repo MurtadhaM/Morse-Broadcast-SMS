@@ -15,10 +15,17 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.gemini.midterm2.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class MainActivity extends AppCompatActivity implements SortFragment.onSortFragmentListener {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+
+    ArrayList<User> users = new User().getUsers();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,4 +35,10 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
           setContentView(binding.getRoot());    }
 
+
+  @Override
+  public void onSortByName(Comparator<User> comparator) {
+    Collections.sort(users, comparator);
+
+  }
 }

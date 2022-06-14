@@ -21,16 +21,15 @@ public class MainActivity extends AppCompatActivity implements AppCatagoriesFrag
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setTitle("App Catagories");
     setContentView(R.layout.activity_main);
 
     getSupportFragmentManager().beginTransaction()
       .replace(R.id.fragmentContainerView, new AppCatagoriesFragment())
-      .addToBackStack("MainFragment")
+      .addToBackStack(null)
       .commit();
   }
 
-  /*
+/*
   TODO: Implement the Interfaces and setup the fragments
    */
 
@@ -42,10 +41,8 @@ public class MainActivity extends AppCompatActivity implements AppCatagoriesFrag
   @Override
   public void onSetAppCatagory(String catagory) {
     selectedCatagory = catagory;
-    setTitle("Top 10 Paid Apps");
     getSupportFragmentManager().beginTransaction()
       .replace(R.id.fragmentContainerView, new AppListFragment())
-
       .addToBackStack(null)
       .commit();
 
@@ -80,12 +77,17 @@ public class MainActivity extends AppCompatActivity implements AppCatagoriesFrag
   @Override
   public void onsetSelectedApp(DataServices.App selectedApp) {
     this.selectedApp = selectedApp;
-    setTitle("App Details");
+
     getSupportFragmentManager().beginTransaction()
       .replace(R.id.fragmentContainerView, new AppDetailsFragment())
       .addToBackStack(null)
       .commit();
 
+  }
+
+  @Override
+  public String onGetAppCatagory() {
+    return selectedCatagory;
   }
 
   @Override

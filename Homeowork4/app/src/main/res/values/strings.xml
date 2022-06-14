@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Homework4</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="age">AGE</string>
+  <string name="group">Group</string>
+  <string name="profile">Profile</string>
+  <string name="state">State</string>
+  <string name="name">Name</string>
+  <string name="filter_button_id">Filter</string>
+  <string name="sort_button_id">Sort</string>
+  <string name="sort_label">Sort Label:</string>
+  <string name="ascending_sort">Ascending_Sort</string>
+  <string name="descending_sort">DESCENDING SORT</string>
+    <string name="app_title">Users</string>
+</resources>

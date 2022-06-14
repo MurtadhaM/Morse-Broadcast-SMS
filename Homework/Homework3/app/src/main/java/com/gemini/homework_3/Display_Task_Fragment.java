@@ -91,6 +91,8 @@ public class Display_Task_Fragment extends Fragment {
     void onTaskDeleted(Task selectedTask);
     Task getSelectedTask();
 
+
+
   }
 }
 

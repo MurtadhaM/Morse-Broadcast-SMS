@@ -1,0 +1,8 @@
+<resources>
+  <string name="app_name">IN-CLASS6</string>
+  <string name="Average_value">0.0</string>
+  <string name="average_label">Average:</string>
+  <string name="select_complexity_label">Select Complexity</string>
+  <string name="seekBar_value">0 Times</string>
+  <string name="generate_Button_label">Generate</string>
+</resources>

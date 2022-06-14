@@ -50,7 +50,9 @@ public class AppDetailsFragment extends Fragment {
 
     // Getting the SElected App
     app = mListener.onGetApp();
-
+    if(getActivity() != null){
+      getActivity().setTitle(app.name + " Details");
+    }
     // Assign the app UI elements
     app_name = view.findViewById(R.id.app_details_name);
     app_artist = view.findViewById(R.id.app_details_artist);

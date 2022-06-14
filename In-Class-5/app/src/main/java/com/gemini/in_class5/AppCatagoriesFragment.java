@@ -36,7 +36,6 @@ public class AppCatagoriesFragment extends Fragment {
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-
   }
 
   @Override
@@ -45,6 +44,9 @@ public class AppCatagoriesFragment extends Fragment {
     // Inflate the layout for this fragment
     View view = inflater.inflate(R.layout.fragmentappcatagoriesfragmentlayout, container, false);
     adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, DataServices.getAppCategories());
+    if(getActivity() != null){
+      getActivity().setTitle("App Categories");
+    }
 
     ListView listView = view.findViewById(R.id.List_View);
     listView.setAdapter(adapter);

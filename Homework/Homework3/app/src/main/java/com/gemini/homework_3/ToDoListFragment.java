@@ -37,8 +37,7 @@ public class ToDoListFragment extends Fragment {
   ListView task_list;
   // FANCY AND USELESS
   ArrayAdapter<Task> adapter;
-  onToDoListFragmentListener mListerner;
-// Important Task View
+  onToDoListFragmentListener mListerner;// Important Task View
 TextView textView_task_name_value;
 TextView textView_task_priority_value;
 TextView textView_task_date_value;
@@ -67,9 +66,11 @@ TextView textView_task_date_value;
     textView_task_name_value.setText(importantTask.getName());
     textView_task_priority_value.setText(importantTask.priority);
     textView_task_date_value.setText(importantTask.getDateString());
+    // GET THE NEW TASKS
+    ArrayList<Task> tasks = mListerner.getTaskList();
 
     // First Recieve the data from the MainActivity
-    ArrayList<Task> tasks = mListerner.getTaskList();
+//    ArrayList<Task> tasks = mListerner.getTaskList();
     ArrayAdapter<Task> adapter = new ArrayAdapter<Task>(getContext(), android.R.layout.select_dialog_item, tasks);
 // ----------------------------------------------------------------------------------------------------------------------
     // View TASK BUTTON
@@ -143,9 +144,7 @@ TextView textView_task_date_value;
 @Override
 public void onAttach(Context context) {
         super.onAttach(context);
-   mListerner = (onToDoListFragmentListener) context;
-
-
+  mListerner = (onToDoListFragmentListener) context;
     }
 
 

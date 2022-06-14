@@ -20,7 +20,6 @@ public class AppAdapter extends ArrayAdapter {
 
   public AppAdapter(Activity context, List<DataServices.App> AppSList) {
     super(context, R.layout.app_list_layout);
-    // DIDN"T WORK WITHOUT THIS
     super.addAll(AppSList);
 
 
@@ -31,9 +30,7 @@ public class AppAdapter extends ArrayAdapter {
   public View getView(int position, View view, ViewGroup parent) {
     LayoutInflater inflater = context.getLayoutInflater();
     View rowView = inflater.inflate(R.layout.fragment_app_list, parent, false);
-
     // SETTING UP THE ELEMENTS
-
     TextView Name = rowView.findViewById(R.id.app_name_value);
     TextView Artist = rowView.findViewById(R.id.app_artist_name_value);
     TextView ReleaseDate = rowView.findViewById(R.id.app_release_date_value);

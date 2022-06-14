@@ -95,15 +95,26 @@ public class UserFragment extends Fragment {
       Context context = view.getContext();
       RecyclerView recyclerView = (RecyclerView) view;
       userAdapter = new UserAdapter(characters,users);
-
-      recyclerView.setLayoutManager(new LinearLayoutManager(context));
+      LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
+      linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+      recyclerView.setLayoutManager(linearLayoutManager);
       recyclerView.setAdapter(userAdapter);
+
+
+    }
+    else {
+      Log.e("UserFragment", "Error: could not cast view to RecyclerView");
 
     }
     return view;
   }
 
 
+
+  interface OnUserFragmentListener {
+    ArrayList<User> onGetUpdatedUsers();
+
+  }
 
 
 

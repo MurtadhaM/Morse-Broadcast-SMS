@@ -61,7 +61,9 @@ public class AppListFragment extends Fragment {
        */
 
     ArrayList<DataServices.App> apps = mListerner.onGetApps();
-
+    if(getActivity() != null){
+      getActivity().setTitle(mListerner.onGetAppCatagory());
+    }
 
     ListAdapter adapter = new AppAdapter((Activity) getContext(), apps);
 
@@ -111,6 +113,7 @@ public class AppListFragment extends Fragment {
 
     void onsetSelectedApp(DataServices.App selectedApp);
 
+    String onGetAppCatagory();
 
   }
 }

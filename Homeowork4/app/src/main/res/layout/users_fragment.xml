@@ -1,0 +1,72 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  tools:context="UsersFragment">
+
+
+  <com.google.android.material.divider.MaterialDivider
+    android:id="@+id/materialDivider"
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:backgroundTint="#E80000"
+    android:fadingEdge="horizontal"
+    app:dividerColor="@color/teal_200"
+    app:layout_constraintBottom_toTopOf="@+id/Users_RecyclerView"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/FilterButton" />
+
+  <Button
+    android:id="@+id/FilterButton"
+    android:layout_width="100dp"
+    android:textColor="#CDDC39"
+    android:textSize="27sp"
+    android:textColorHighlight="#E80000"
+    android:padding="10dp"
+    android:textAlignment="center"
+
+    android:textAllCaps="false"
+    android:backgroundTint="#E91E63"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="52dp"
+    android:layout_marginEnd="52dp"
+    android:layout_marginBottom="16dp"
+    android:text="@string/filter_button_id"
+    app:layout_constraintBottom_toTopOf="@+id/Users_RecyclerView"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <Button
+    android:id="@+id/SortButton"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="24dp"
+    android:backgroundTint="#E91E63"
+    android:padding="10dp"
+    android:text="@string/sort_button_id"
+
+    android:textAlignment="center"
+    android:textAllCaps="false"
+    android:textColor="#CDDC39"
+    android:textColorHighlight="#E80000"
+    android:textSize="27sp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/FilterButton" />
+
+  <ListView
+    android:id="@+id/Users_RecyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_marginTop="15dp"
+    android:overScrollMode="never"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/materialDivider"
+    tools:listitem="@layout/users_template_layout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

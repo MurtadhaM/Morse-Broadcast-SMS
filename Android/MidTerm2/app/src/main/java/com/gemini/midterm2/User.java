@@ -10,7 +10,7 @@ package com.gemini.midterm2;
 import java.util.ArrayList;
 
 public class User {
-  public static ArrayList<Character> users_Names_First= new ArrayList<>();
+    ArrayList<Character> users_Names_First= new ArrayList<>();
   ArrayList<Character> characters = new ArrayList<>();
 
   public  ArrayList<Character> users_Names_First() {
