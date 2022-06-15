@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="CreateTaskFragment">
+
+  <TextView
+    android:id="@+id/textView_name_label"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="44dp"
+    android:text="@string/task_name_label"
+    app:layout_constraintBottom_toBottomOf="@+id/textView_task_name"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+    android:id="@+id/textView_date_label"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="68dp"
+    android:text="@string/date_label"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView_name_label" />
+
+  <TextView
+    android:id="@+id/textView_priority_label"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="48dp"
+    android:text="@string/priority_label"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView_date_label" />
+
+  <TextView
+    android:id="@+id/textView_date_value"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="124dp"
+    android:layout_marginTop="68dp"
+    android:text="@string/date_value"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView_name_label" />
+
+  <EditText
+    android:id="@+id/textView_task_name"
+    android:layout_width="224dp"
+    android:layout_height="48dp"
+    android:layout_marginTop="44dp"
+    android:hint="@string/enter_task_name_here_hint"
+    android:labelFor="@id/textView_name_label"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.323"
+    app:layout_constraintStart_toEndOf="@+id/textView_name_label"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <Button
+    android:id="@+id/button_select_date"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/set_date_button_text"
+    app:layout_constraintBaseline_toBaselineOf="@+id/textView_date_label"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.795"
+    app:layout_constraintStart_toEndOf="@+id/textView_date_value" />
+
+  <RadioGroup
+    android:id="@+id/radioGroup_priority"
+    android:layout_width="162dp"
+    android:layout_height="144dp"
+    android:layout_marginTop="12dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toEndOf="@+id/textView_priority_label"
+    app:layout_constraintTop_toBottomOf="@+id/textView_priority_label">
+
+    <RadioButton
+      android:id="@+id/radioButton_priority_high"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/high_priority" />
+
+    <RadioButton
+      android:id="@+id/radioButton_priority_medium"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/medium_priority" />
+
+    <RadioButton
+      android:id="@+id/radioButton_priority_low"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/low_priority" />
+  </RadioGroup>
+
+  <Button
+    android:id="@+id/button_create_task_cancel_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="56dp"
+    android:layout_marginTop="40dp"
+    android:text="@string/cancel_button"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/radioGroup_priority" />
+
+  <Button
+    android:id="@+id/button_create_task_Submit_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="140dp"
+    android:layout_marginTop="40dp"
+    android:text="@string/submit_button"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/button_create_task_cancel_button"
+    app:layout_constraintTop_toBottomOf="@+id/radioGroup_priority" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

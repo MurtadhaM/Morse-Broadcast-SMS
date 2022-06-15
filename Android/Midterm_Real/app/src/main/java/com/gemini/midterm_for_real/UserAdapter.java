@@ -33,10 +33,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
       holder.mTextviewGroup.setText(users.get(position).group);
       holder.mTextViewState.setText(users.get(position).state);
       if(users.get(position).gender.equals("Female")){
-        holder.mImageviewUserIcon.setImageResource(R.drawable.avatar_female);
+        holder.mImageviewUserIcon.setImageResource(R.drawable.ic_launcher_background);
 
       } else{
-        holder.mImageviewUserIcon.setImageResource(R.drawable.avatar_male);
+        holder.mImageviewUserIcon.setImageResource(R.drawable.ic_launcher_foreground);
 
       }
 

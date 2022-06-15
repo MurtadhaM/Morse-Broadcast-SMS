@@ -10,7 +10,6 @@
     android:id="@+id/appBarLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:theme="@style/Theme.Practice2.AppBarOverlay"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
 
@@ -18,8 +17,7 @@
       android:id="@+id/toolbar"
       android:layout_width="match_parent"
       android:layout_height="?attr/actionBarSize"
-      android:background="?attr/colorPrimary"
-      app:popupTheme="@style/Theme.Practice2.PopupOverlay" />
+      android:background="?attr/colorPrimary" />
 
   </com.google.android.material.appbar.AppBarLayout>
 

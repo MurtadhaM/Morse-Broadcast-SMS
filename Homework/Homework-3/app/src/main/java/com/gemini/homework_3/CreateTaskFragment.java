@@ -18,7 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.gemini.homework_3.databinding.*;
+import com.gemini.homework_3.databinding.ActivityCreateTaskLayoutBinding;
 
 import java.util.ArrayList;
 
@@ -27,7 +27,7 @@ public class CreateTaskFragment extends Fragment   {
   public       String date = "";
 
   public static final Object RESULT_KEY = "result";
-  DisplayTaskFragmentLayoutBinding binding;
+  ActivityCreateTaskLayoutBinding binding;
 
   Task task;
 
@@ -44,12 +44,9 @@ TextView task_date;
             Bundle savedInstanceState
     ) {
 
-      binding = DisplayTaskFragmentLayoutBinding.inflate(inflater, container, false);
+      binding = ActivityCreateTaskLayoutBinding.inflate(inflater, container, false);
         binding = binding.inflate(inflater, container, false);
-      String task_name = binding.textViewTaskName.getText().toString();
-      String task_date = binding.textViewTaskDate.getText().toString();
 
-      String task_priority;
         return binding.getRoot();
 
 
@@ -58,8 +55,8 @@ TextView task_date;
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-binding = ;
 
+    binding = ActivityCreateTaskLayoutBinding.inflate(getLayoutInflater());
       String task_name =binding.textViewTaskName.getText().toString();
 
 

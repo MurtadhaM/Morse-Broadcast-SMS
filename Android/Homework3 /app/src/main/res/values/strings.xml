@@ -1,0 +1,35 @@
+<resources>
+  <string name="app_name">Homeowork3</string>
+  <!-- Strings used for fragments for navigation -->
+
+  <string name="you_have_7_tasks">No Tasks</string>
+  <string name="view_tasks">View Tasks</string>
+  <string name="create_a_task">Create A Task</string>
+  <string name="task_name_label">Name:</string>
+  <string name="date_label">Date:</string>
+  <string name="date_value"> </string>
+  <string name="priority_label">Priority:</string>
+  <string name="task_name">Task Name</string>
+  <string name="priority">Low</string>
+  <string name="selected_task_button_cancel">Cancel</string>
+  <string name="delete">Delete</string>
+  <string name="priotiry">high</string>
+  <string name="date_task_card_date"> </string>
+  <string name="task_name_lebel">Task Name</string>
+  <string name="upcoming_task">Upcoming Task:</string>
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="set_date_button_text">Set Date</string>
+  <string name="enter_task_name_here_hint">Enter Your Name</string>
+  <string name="high_priority">High</string>
+  <string name="medium_priority">Mid</string>
+  <string name="low_priority">Low</string>
+  <string name="cancel_button">Cancel</string>
+  <string name="submit_button">Submit</string>
+    <string name="displayTag">Display Task</string>
+  <string name="create_tag">Create Task</string>
+  <string name="NoTasks">No Upcoming Tasks</string>
+  <string name="Tasks_message">\" Tasks\"</string>
+  <string name="NoTASKS">No Tasks</string>
+  <!-- TODO: Remove or change this placeholder text -->
+</resources>
