@@ -31,7 +31,7 @@ Projects:
 <td>Morse-Broadcast-SMS</td>
 <td>A SMS Morse-Broadcast System for Android</td>
 <td><a href="https://github.com/MurtadhaM/Morse-Broadcast-SMS" target="_blank">Morse-Broadcast-SMS</a></td>
-<td><image src=""></td>
+<td><image src="https://github.com/MurtadhaM/Morse-Broadcast-SMS/blob/main/Morser_Prototype.gif?raw=true"></td>
 </tr>
 
 <tr>
@@ -41,12 +41,10 @@ Projects:
 <td><image src="https://github.com/MurtadhaM/Morse-Broadcast-SMS/blob/main/Midterm.gif?raw=true"> </td>
 </tr>
 
-<tr>
-<td>TLDR</td>
-<td>A Text-Processing Application for Android</td>
-<td><a href="h" target="_blank">TLDR</a></td>
-<td><a href="h" target="_blank">TLDR</a></td>
-</tr>
+  </tbody>
+</table>
+
+  
 
 
 
