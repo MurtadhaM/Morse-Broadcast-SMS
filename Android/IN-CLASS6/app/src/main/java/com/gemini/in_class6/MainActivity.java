@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
           switch (msg.what) {
             case 0x00:
               Log.d(TAG, "handleMessage: " + "Start");
+              averageValue.setText("0");
               break;
             case 0x01:
               Log.d(TAG, "handleMessage: " + "Progress");

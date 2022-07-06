@@ -1,0 +1,10 @@
+{
+    "avdmanager.sdkPath": "/Users/m/Library/Android/sdk",
+    "avdmanager.emulator": "/Users/m/Library/Android/sdk/emulator/emulator",
+    "avdmanager.executable": "/Volumes/Mac2Small/sdk/sdk/tools/bin/avdmanager",
+    "avdmanager.sdkManager": "/Volumes/Mac2Small/sdk/sdk/tools/bin/screenshot2",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "files.watcherExclude": {
+        "**/target": true
+    }
+}

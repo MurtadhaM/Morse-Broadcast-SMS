@@ -1,0 +1,8 @@
+2022.07.02 17:00:59 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/m/Documents/GitHub/Morse-Broadcast-SMS/Homeowork4/.metals/lsp.trace.json or /Users/m/Library/Caches/org.scalameta.metals/lsp.trace.json
+2022.07.02 17:00:59 INFO  logging to file /Users/m/Documents/GitHub/Morse-Broadcast-SMS/Homeowork4/.metals/metals.log
+2022.07.02 17:00:59 INFO  Started: Metals version 0.11.6+67-926ec9a3-SNAPSHOT in workspace '/Users/m/Documents/GitHub/Morse-Broadcast-SMS/Homeowork4' for client Visual Studio Code - Insiders 1.69.0-insider.
+2022.07.02 17:01:00 INFO  time: initialize in 1.12s
+2022.07.02 17:01:00 WARN  Flyway upgrade recommended: H2 2.1.212 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.1.210.
+2022.07.02 17:01:00 WARN  Build server is not auto-connectable.
+2022.07.02 17:01:02 INFO  shutting down Metals
+2022.07.02 17:01:02 WARN  no build target for: /Users/m/Downloads/Bruh.scala

@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "3cb16247-a971-41c4-99fe-84391404d30c",
+		"name": "ITIS4180 Contacts App JSON",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/contacts/json",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.theappsdr.com/contacts/json",
+					"protocol": "https",
+					"host": [
+						"www",
+						"theappsdr",
+						"com"
+					],
+					"path": [
+						"contacts",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/contact/json/create/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Bob Smith",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "a@a.com",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "123-456-7890",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "HOME",
+							"description": "CELL, OFFICE or HOME",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://www.theappsdr.com/contact/json/create",
+					"protocol": "https",
+					"host": [
+						"www",
+						"theappsdr",
+						"com"
+					],
+					"path": [
+						"contact",
+						"json",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/contact/json/update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Bob Smith",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "b@c.com",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "123-456-7890",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "HOME",
+							"description": "CELL, OFFICE or HOME",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://www.theappsdr.com/contact/json/update",
+					"protocol": "https",
+					"host": [
+						"www",
+						"theappsdr",
+						"com"
+					],
+					"path": [
+						"contact",
+						"json",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/contact/json/delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://www.theappsdr.com/contact/json/delete",
+					"protocol": "https",
+					"host": [
+						"www",
+						"theappsdr",
+						"com"
+					],
+					"path": [
+						"contact",
+						"json",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
