@@ -6,6 +6,16 @@
   android:layout_height="match_parent"
   tools:context=".LoginFragment">
 
+  <Button
+    android:id="@+id/registerButton"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="Register"
+    app:layout_constraintEnd_toStartOf="@+id/button_Login"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/button_Login" />
+
   <com.google.android.material.appbar.AppBarLayout
     android:id="@+id/appBarLayout"
     android:layout_width="match_parent"

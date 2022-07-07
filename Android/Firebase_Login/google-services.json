@@ -7,6 +7,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:171813318473:android:9fc8429e7022010ac1f498",
+        "android_client_info": {
+          "package_name": "com.gemini.firebase_login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "171813318473-lpqrohb2hjfq6rb18bs5ls375f2nbvk6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc1KjDjEyMtWmPlCVcQJ5PyOY2zfjVma4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "171813318473-lpqrohb2hjfq6rb18bs5ls375f2nbvk6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:171813318473:android:682ed80f6615b04ac1f498",
         "android_client_info": {
           "package_name": "com.gemini.morse"

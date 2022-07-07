@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 
@@ -25,11 +26,14 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Objects;
 import java.util.concurrent.Executor;
 
 public class LoginFragment extends Fragment {
 
+  Button Register;
     private ActivityLoginBinding binding;
+  private FirebaseAuth mAuth;
 
     @Override
     public View onCreateView(
@@ -50,6 +54,17 @@ public class LoginFragment extends Fragment {
             }
         });
 
+        binding.registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              if (getActivity() != null) {
+                getActivity().getSupportFragmentManager()
+                  .beginTransaction()
+                  .replace(R.id.fragmentContainerView, new RegisterFragment())
+                  .commit();
+              }
+            }
+        });
         return view;
 
     }
@@ -92,11 +107,51 @@ public class LoginFragment extends Fragment {
   private void updateUI(FirebaseUser user) {
 
   }
-  private FirebaseAuth mAuth;
 
 
+  void RegisterUser(FirebaseUser user) {
+    if (user != null) {
+      Toast.makeText(getContext(), "User Created", Toast.LENGTH_SHORT).show();
+
+      mAuth.createUserWithEmailAndPassword(Objects.requireNonNull(user.getEmail()), user.getEmail())
+
+        .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+          @Override
+          public void onComplete(@NonNull Task<AuthResult> task) {
+            if (task.isSuccessful()) {
+              // Sign in success, update UI with the signed-in user's information
+              Log.d(TAG, "createUserWithEmail:success");
+              FirebaseUser user = mAuth.getCurrentUser();
+              Toast.makeText(getActivity(), "Registeration Successful.",
+                Toast.LENGTH_SHORT).show();
+
+              updateUI(user);
+            } else {
+              // If sign in fails, display a message to the user.
+              Log.w(TAG, "createUserWithEmail:failure", task.getException());
+              Toast.makeText(getActivity(), "Registeration failed.",
+                Toast.LENGTH_SHORT).show();
+              updateUI(null);
+            }
+
+            // [START_EXCLUDE]
+            if (!task.isSuccessful()) {
+              Toast.makeText(getContext(), "secus", Toast.LENGTH_SHORT).show();
+            }
+            // [END_EXCLUDE]
+          }
+        });
+    } else {
+      Toast.makeText(getContext(), "User not Created", Toast.LENGTH_SHORT).show();
+    }
+  }
 
 
+@Override
+public void onAttach(Context context) {
+  super.onAttach(context);
+  mAuth = FirebaseAuth.getInstance();
+ }
 
   @Override
   public void onStart() {
