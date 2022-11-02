@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView_Registration_Date_Label2"
+            android:layout_width="107dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:fontFamily="cursive"
+            android:text="Date Joined: "
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textColor="#B80C0C"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView_Email_View"
+            app:layout_constraintEnd_toStartOf="@+id/textView_Email_View"
+            app:layout_constraintHorizontal_bias="0.242"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_Email_View2"
+            android:layout_width="235dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="16dp"
+            android:lineSpacingExtra="14sp"
+            android:text="hydra@findasnake.com"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#020202"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:typeface="serif"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView_Email_Label"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <TextView
+            android:id="@+id/textView_Email_Label"
+            android:layout_width="107dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:fontFamily="cursive"
+            android:text="Email: "
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textColor="#B80C0C"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView_Email_View2"
+            app:layout_constraintEnd_toStartOf="@+id/textView_Email_View"
+            app:layout_constraintHorizontal_bias="0.185"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_Email_View"
+            android:layout_width="235dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="16dp"
+            android:lineSpacingExtra="14sp"
+            android:text="11-22-2022"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:typeface="serif"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView_Email_Label"
+            app:layout_constraintTop_toBottomOf="@+id/textView_Email_View2" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="256dp"
+            android:layout_height="184dp"
+            android:layout_marginStart="77dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="78dp"
+            android:src="@drawable/profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/Home_Back_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="163dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="155dp"
+            android:text="Return"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_Email_View" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
