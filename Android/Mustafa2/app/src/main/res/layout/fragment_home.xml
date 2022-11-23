@@ -107,6 +107,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView_Email_View" />
+
+        <Button
+            android:id="@+id/home_Notification_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="163dp"
+            android:text="Notification"
+            android:textAlignment="viewStart"
+            app:layout_constraintEnd_toEndOf="@+id/Home_Back_Button"
+            app:layout_constraintHorizontal_bias="0.319"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Home_Back_Button" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
